@@ -11,7 +11,7 @@ const assertEqual = function(actual, expected) {
 
 head = function(array) {
   return array[0];
-}
+};
 
 // TEST ASSERTIONS
 
