@@ -1,7 +1,7 @@
 // Test/assertion functions
 
-const assertArraysEqual = function(eqArrays, arrayOne, arrayTwo) {
-  if (eqArrays) {
+const assertArraysEqual = function(arrayOne, arrayTwo) {
+  if (eqArrays(arrayOne, arrayTwo)) {
     console.log(`✅✅✅ Assertion Passed: ${arrayOne} === ${arrayTwo}`);
   } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${arrayOne} !== ${arrayTwo}`);
@@ -53,7 +53,7 @@ const middle = function(array) {
 // console.log(middle([1, 2, 3, 4, 5, 6, 7]))
 // console.log(middle([1, 2, 3, 4, 5, 6]))
 
-assertArraysEqual((eqArrays((middle([1, 2, 3, 4, 5])), [3])), (middle([1, 2, 3, 4, 5])), [3])
-assertArraysEqual((eqArrays((middle([1, 2])), [])), (middle([1, 2])), [])
-assertArraysEqual((eqArrays((middle([])), [])), (middle([])), [])
-assertArraysEqual((eqArrays((middle([1, 2, 3, 4])), [2, 3])), (middle([1, 2, 3, 4])), [2, 3])
+assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
+assertArraysEqual((middle([1, 2])), []);
+assertArraysEqual((middle([])), []);
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
