@@ -20,13 +20,24 @@ function eqArrays(array1, array2) {
   return true;
 }
 
-function without(sourceArray, itemsToRemoveArray) {
-  let newArray = sourceArray.filter((comparison) => {
-    return itemsToRemoveArray.indexOf(comparison) === -1
-  })
-  return newArray
-}
+// Recommended solution from mentor
 
+// function without(sourceArray, itemsToRemoveArray) {
+//   let newArray = sourceArray.filter((comparison) => {
+//     return itemsToRemoveArray.indexOf(comparison) === -1
+//   })
+//   return newArray
+// }
+
+const without = function(source, itemsToRemove) {
+  let output = source;
+  for (let i of itemsToRemove) {
+    if (output.includes(i)) {
+      output.splice(output.indexOf(i), 1);
+    }
+  }
+  return output;
+};
 
 const originalArray = ["1", "2", "3"];
 const expectedOutput = ["1", "2"]
