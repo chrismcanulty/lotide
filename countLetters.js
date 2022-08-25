@@ -18,7 +18,7 @@ const countLetter = function(sentence){
       letterSummary[letter] += 1;
       } else (letterSummary[letter] = 1);
       }
-  } console.log("Summary", letterSummary);
+  };
 return letterSummary
 }
 
@@ -31,3 +31,5 @@ assertEqual(result1["o"], 2);
 assertEqual(result1["l"], 2);
 assertEqual(result1["u"], 1);
 assertEqual(result1[" "], undefined);
+
+// { H: 1, e: 1, l: 2, o: 1 }
