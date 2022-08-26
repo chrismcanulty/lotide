@@ -6,10 +6,6 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
   }
 };
 
-let array10 = [1, 2, 3];
-let array20 = [1, 2];
-console.log(assertArraysEqual(array10, array20))
-
 function eqArrays(array1, array2) {
   if (!array1 || !array2) {
     return false;
@@ -23,3 +19,7 @@ function eqArrays(array1, array2) {
   }
   return true;
 }
+
+let array10 = [1, 2, 3];
+let array20 = [1, 2];
+console.log(assertArraysEqual(array10, array20))
