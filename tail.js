@@ -1,20 +1,22 @@
 // ASSERT EQUAL TEST
 
 const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
+  if (actual !== expected) {
+    return console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+  } console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 };
 
-function tail(array) {
-  let tailArray = [];
-  for (let i = 1; i < array.length; i++) {
-    tailArray.push(array[i]);
-  }
-  return tailArray;
-}
+// function tail(array) {
+//   let tailArray = [];
+//   for (let i = 1; i < array.length; i++) {
+//     tailArray.push(array[i]);
+//   }
+//   return tailArray;
+// }
+
+// Array slice method
+
+const tail = array => array.slice(1)
 
 // Test Case 1: Check the returned array elements
 const result = tail(["Hello", "Lighthouse", "Labs"]);
