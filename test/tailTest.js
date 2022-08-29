@@ -1,6 +1,6 @@
 // test.tailTest.js
 
-const tailTest = require('../tail.js');
+const tail = require('../tail.js');
 const assertEqual = require('../assertEqual');
 
 // Test Case 1: Check the returned array elements
