@@ -1,21 +1,30 @@
-// test.tailTest.js
+// Mocha and Chai based test code
 
-const tail = require('../tail.js');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
+const tail = require('../tail');
 
-// Test Case 1: Check the returned array elements
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); //ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+const array = ["Yo Yo", "Lighthouse", "Labs"];
+tail(array);
 
-// Test Case 2: Check the returned array elements
-const result2 = tail([1, 7, 50, 12, 29]);
-assertEqual(result2.length, 4); //ensure we get back four elements
-assertEqual(result2[2], 12); // ensure second element is 12
-assertEqual(result2[4], undefined); // ensure fourth element returns undefined
+// const tail = require('../tail.js');
+// const assertEqual = require('../assertEqual');
 
-// Test Case: Check the original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture th return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
+describe("#tail", () => {
+  it("returns array [\"Lighthouse\", \"Labs\"] for [\"Hello\", \"Lighthouse\", \"Labs\"]", () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
+  });
+
+  it("returns array [7, 50, 12, 29] for [1, 7, 50, 12, 29]", () => {
+    assert.deepEqual(tail([1, 7, 50, 12, 29]), [7, 50, 12, 29]);
+  });
+
+  it("does not modify the original array [\"Yo Yo\", \"Lighthouse\", \"Labs\"]", () => {
+    assert.deepEqual(array, ["Yo Yo", "Lighthouse", "Labs"]);
+  });
+})
+
+
+// // Test Case: Check the original array
+// const words = ["Yo Yo", "Lighthouse", "Labs"];
+// tail(words); // no need to capture th return value since we are not checking it
+// assertEqual(words.length, 3); // original array should still have 3 elements!
